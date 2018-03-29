@@ -377,3 +377,98 @@ Find out when was a file/a folder deleted
 ```
 git log -1 -- file/folder
 ```
+Newer Version:
+ssh-keygen -t rsa -b 4096 -C  "asif@.com"
+
+cat ~/.ssh/id_rsa.pub
+
+/* CONFIGURE TOOLING */
+git config --global merge.tool p4merge
+
+git config --global mergetool.p4merge.path c:/Program Files/Perforce/p4merge.exe
+
+
+$ git config --global user.name "[name]"
+
+Sets the name you want attached to your commit transactions
+
+$ git config --global user.email "[email address]"
+
+Sets the email you want attached to your commit transactions
+
+/* To check user name */
+
+git config user.name
+
+/* Downloads a project and its entire version history */
+$ git clone git@.git
+$ git clone git@.git 
+
+/* Initialize local configuration file .gitmodules */
+$ git submodule init
+
+/* Fetch all the data from project and check out the appropriate commit listed in your superproject: */
+$ git submodule update
+
+/* Updates .git/config which contains a copy of this submodule list */
+$ git submodule sync
+
+/* Pull latest of all submodules from development branch*/
+$ git submodule foreach git checkout development
+$ git submodule foreach git pull origin development
+
+/* Update (pull commits from) all submodules */
+git submodule foreach git pull origin development --ff-only
+
+/* commit only modified (and not new or deleted) files? */
+git commit -a
+
+OR
+
+git commit -am "commit message"
+
+/* merge request procedure */
+
+git push origin (feature branch e.g. authenticator_api)
+
+then Gitlab create new merge request
+
+/* URL of origin */
+
+git remote show origin
+
+/* renaming of branch */
+git branch -m <oldname> <newname>
+
+or if already in it
+
+git branch -m <newname>
+
+/* Amending the previous commit message */
+git commit --amend -m "New commit message"
+
+Alternatively, if you just want to squash everything in topical_xFeature into master, you could just do the following:
+
+git checkout master
+git merge --squash topical_xFeature
+git commit
+
+git remote show origin
+
+checkout remote:
+git fetch
+git checkout case_66469_integration
+
+branch under branch:
+git checkout case_66469_integration
+git checkout -b myFeature case_66469_integration
+
+rebasing:
+git checkout feature_branch
+git rebase master
+git checkout master
+
+git push origin myFeature
+then use the Git Hosting Service option for creating a new merge request
+
+git cherry-pick -x
